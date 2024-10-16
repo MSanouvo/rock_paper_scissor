@@ -89,19 +89,21 @@
             else{
                 console.log("Draw")
             }
+                
         }
-        const humanChoice = getHumanChoice()
-        const computerChoice = getComputerChoice()
+        /* scores */
+        let humanScore = 0
+        let computerScore = 0
 
         function playGame(){
-            console.log(humanChoice)
-            console.log(computerChoice)
-            /* scores */
-            let humanScore = 0
-            let computerScore = 0
             /* loop 5 rounds */
             for (let i = 0; i <= 5; i++){
-                playRound()
+                const humanChoice = getHumanChoice()
+                const computerChoice = getComputerChoice()
+                console.log(humanChoice)
+                console.log(computerChoice)
+                playRound(humanChoice, computerChoice)
+                console.log("Score: "+humanScore+ " to "+computerScore)
             }
 
             }
