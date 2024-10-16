@@ -52,37 +52,42 @@
         function playRound(humanChoice, computerChoice){
             /* human wins, rock*/
             if (humanChoice === 'rock' && computerChoice === 'scissors'){
-                console.log("Rock beats scissors, Player wins!");
                 humanScore = ++humanScore;
+                return console.log("Rock beats scissors, Player wins!");
                 
             }
             /* human wins, paper */
             else if (humanChoice === 'paper' && computerChoice === 'rock'){
-                console.log("Paper beats rock, Player wins!");
                 humanScore = ++humanScore;
+                return console.log("Paper beats rock, Player wins!");
+                
             }
             /* human wins, scissors */
             else if (humanChoice === 'scissor' && computerChoice === 'paper'){
-                console.log("Scissors beats paper, Player wins!");
                 humanScore = ++humanScore;
+                return console.log("Scissors beats paper, Player wins!");
+                
             }
             /* copmp wins, rock */
             if (humanChoice === 'scissors' && computerChoice === 'rock'){
-                console.log("Rock beats scissors, Player loses!");
                 computerScore = ++computerScore;
+                return console.log("Rock beats scissors, Player loses!");
+                
             }
             /* comp wins, paper */
             else if (humanChoice === 'rock' && computerChoice === 'paper'){
-                console.log("Paper beats rock, Player loses!");
                 computerScore = ++computerScore;
+                return console.log("Paper beats rock, Player loses!");
+                
             }
             /* comp wins, scissors */
             else if (humanChoice === 'paper' && computerChoice === 'scissors'){
-                console.log("Scissors beats paper, Player loses!");
                 computerScore = ++computerScore;
+                return console.log("Scissors beats paper, Player loses!");
+                
             }
             else{
-                console.log("Draw")
+                return console.log("Draw")
             }
                 
         }
@@ -97,6 +102,7 @@
 
             /* loop 5 rounds */
             for (let i = 1; i <= 5; i++){
+                console.log("") /*blank line to clean up console */
                 console.log('Round ' + i)
                 /* Get choices */
                 const humanChoice = getHumanChoice()
