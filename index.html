@@ -6,7 +6,7 @@
     <title>Document</title>
 
     <script>
-        console.log("Hellow World")
+        console.log("Let's play Rock, Paper, Scissors!")
         /* RPS Controller */
 
         function getComputerChoice(){
@@ -52,39 +52,34 @@
         function playRound(humanChoice, computerChoice){
             /* human wins, rock*/
             if (humanChoice === 'rock' && computerChoice === 'scissors'){
-                console.log("Rock beats scissors");
-                humanScore = humanScore++;
-                console.log(humanScore);
+                console.log("Rock beats scissors, Player wins!");
+                humanScore = ++humanScore;
+                
             }
             /* human wins, paper */
             else if (humanChoice === 'paper' && computerChoice === 'rock'){
-                console.log("Paper beats rock");
-                humanScore = humanScore++;
-                console.log(humanScore);
+                console.log("Paper beats rock, Player wins!");
+                humanScore = ++humanScore;
             }
             /* human wins, scissors */
             else if (humanChoice === 'scissor' && computerChoice === 'paper'){
-                console.log("Scissors beats paper");
-                humanScore = humanScore++;
-                console.log(humanScore);
+                console.log("Scissors beats paper, Player wins!");
+                humanScore = ++humanScore;
             }
             /* copmp wins, rock */
             if (humanChoice === 'scissors' && computerChoice === 'rock'){
-                console.log("Rock beats scissors");
-                computerScore = computerScore++;
-                console.log(computerScore);
+                console.log("Rock beats scissors, Player loses!");
+                computerScore = ++computerScore;
             }
             /* comp wins, paper */
             else if (humanChoice === 'rock' && computerChoice === 'paper'){
-                console.log("Paper beats rock");
-                computerScore = computerScore++;
-                console.log(computerScore);
+                console.log("Paper beats rock, Player loses!");
+                computerScore = ++computerScore;
             }
             /* comp wins, scissors */
             else if (humanChoice === 'paper' && computerChoice === 'scissors'){
-                console.log("Scissors beats paper");
-                computerScore = computerScore++;
-                console.log(computerScore);
+                console.log("Scissors beats paper, Player loses!");
+                computerScore = ++computerScore;
             }
             else{
                 console.log("Draw")
@@ -92,16 +87,23 @@
                 
         }
         /* scores */
-        let humanScore = 0
-        let computerScore = 0
+        let humanScore = null
+        let computerScore = null
 
         function playGame(){
+            /* Reset player scores */
+            humanScore = 0
+            computerScore = 0
+
             /* loop 5 rounds */
-            for (let i = 0; i <= 5; i++){
+            for (let i = 1; i <= 5; i++){
+                console.log('Round ' + i)
+                /* Get choices */
                 const humanChoice = getHumanChoice()
                 const computerChoice = getComputerChoice()
-                console.log(humanChoice)
-                console.log(computerChoice)
+
+                console.log("Player : " + humanChoice)
+                console.log("Computer: " +computerChoice)
                 playRound(humanChoice, computerChoice)
                 console.log("Score: "+humanScore+ " to "+computerScore)
             }
