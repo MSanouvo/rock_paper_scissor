@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        console.log("Hellow World")
+        /* RPS Controller */
+
+        function getComputerChoice(){
+            /* returns 0, 1 , or 2 */
+            let num = Math.floor(Math.random()*3);
+            let  choice = null;
+            /* selects computer choice based on output of num*/
+            switch(num){
+                case 0:
+                    choice = "rock";
+                    break;
+                case 1:
+                    choice = "paper";
+                    break;
+                case 2:
+                    choice = "scissors";
+                    break;
+            }
+            return choice
+            console.log(choice)
+        }
+
+        /* Player choice */
+
+        function getHumanChoice(){
+            let humanChoice = prompt("Please choose: 'rock', 'paper', or 'scissors'.");
+            let pick = null 
+
+            if (humanChoice === 'rock'){
+                    pick = 'rock';
+                }
+                else if (humanChoice === 'paper'){
+                    pick = 'paper';
+                }
+                else if (humanChoice === 'scissors'){
+                    pick = 'scissors';
+                }
+                return pick
+                console.log(picK)
+        }
+
+        
+        function playRound(humanChoice, computerChoice){
+            /* human wins, rock*/
+            if (humanChoice === 'rock' && computerChoice === 'scissors'){
+                console.log("Rock beats scissors");
+                humanScore = humanScore++;
+                console.log(humanScore);
+            }
+            /* human wins, paper */
+            else if (humanChoice === 'paper' && computerChoice === 'rock'){
+                console.log("Paper beats rock");
+                humanScore = humanScore++;
+                console.log(humanScore);
+            }
+            /* human wins, scissors */
+            else if (humanChoice === 'scissor' && computerChoice === 'paper'){
+                console.log("Scissors beats paper");
+                humanScore = humanScore++;
+                console.log(humanScore);
+            }
+            /* copmp wins, rock */
+            if (humanChoice === 'scissors' && computerChoice === 'rock'){
+                console.log("Rock beats scissors");
+                computerScore = computerScore++;
+                console.log(computerScore);
+            }
+            /* comp wins, paper */
+            else if (humanChoice === 'rock' && computerChoice === 'paper'){
+                console.log("Paper beats rock");
+                computerScore = computerScore++;
+                console.log(computerScore);
+            }
+            /* comp wins, scissors */
+            else if (humanChoice === 'paper' && computerChoice === 'scissors'){
+                console.log("Scissors beats paper");
+                computerScore = computerScore++;
+                console.log(computerScore);
+            }
+            else{
+                console.log("Draw")
+            }
+        }
+        const humanChoice = getHumanChoice()
+        const computerChoice = getComputerChoice()
+
+        function playGame(){
+            console.log(humanChoice)
+            console.log(computerChoice)
+            /* scores */
+            let humanScore = 0
+            let computerScore = 0
+            /* loop 5 rounds */
+            for (let i = 0; i <= 5; i++){
+                playRound()
+            }
+
+            }
+        playGame()
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
